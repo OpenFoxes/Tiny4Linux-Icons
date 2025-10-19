@@ -1,0 +1,10 @@
+[package]
+name = "Tiny4Linux-Assets"
+version = "1.0.0"
+edition = "2024"
+
+include = [
+    "Cargo.toml",
+    "src/**",
+    "generated/**"
+]
