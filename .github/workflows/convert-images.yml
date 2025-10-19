@@ -1,0 +1,67 @@
+name: Convert Images
+on:
+  pull_request:
+    branches:
+      - "main"
+
+concurrency:
+  group: ${{ github.head_ref ||  github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  convert:
+    name: Convert images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Load latest commit-message
+        id: last_commit
+        run: |
+          last_commit_msg=$(git log -1 --pretty=%s)
+          echo "lastcommit=$last_commit_msg" >> $GITHUB_ENV
+
+      - name: Install Inkscape for converting SVGs
+        if:
+          ${{
+          !contains(env.lastcommit, '🍱 Automatically converted SVGs to PNGs')
+          }}
+        run: sudo apt-get update && sudo apt-get install -y inkscape
+
+      - name: Convert SVGs to PNGs
+        if:
+          ${{
+          !contains(env.lastcommit, '🍱 Automatically converted SVGs to PNGs')
+          }}
+        run: |
+          mkdir -p png
+          find svg -type f -name '*.svg' | while read -r file; do
+            target="png/${file#svg/}"
+            target_dir=$(dirname "$target")
+            mkdir -p "$target_dir"
+
+            inkscape "$file" --export-type=png --export-background-opacity=0 --export-filename="${target%.svg}.png"
+            echo "Converted: $file -> ${target%.svg}.png"
+          done
+
+      - name: Commit and push generated PNGs
+        if:
+          ${{
+          !contains(env.lastcommit, '🍱 Automatically converted SVGs to PNGs')
+          }}
+        run: |
+          git config --global user.name 'OpenFoxes Maintenance Bot'
+          git config --global user.email 'openfoxes@bono-fox.de'
+          git checkout ${{ github.event.pull_request.head.ref }}
+          git add png
+          if git diff --cached --quiet; then
+            echo "No changes detected."
+          else
+            git commit -m "🍱 Automatically converted SVGs to PNGs"
+            git push origin ${{ github.event.pull_request.head.ref }}
+          fi
