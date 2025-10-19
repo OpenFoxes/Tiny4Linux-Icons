@@ -1,5 +1,5 @@
 [package]
-name = "Tiny4Linux-Assets"
+name = "tiny4linux_assets"
 version = "1.0.0"
 edition = "2024"
 
