@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: .76px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #ededed;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-7 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-8 {
+        stroke: #1d1d1b;
+      }
+
+      .cls-2 {
+        stroke-width: .35px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #ededed;
+      }
+
+      .cls-3 {
+        stroke-width: .53px;
+      }
+
+      .cls-4 {
+        stroke-width: .43px;
+      }
+
+      .cls-5 {
+        stroke-width: .25px;
+      }
+
+      .cls-6 {
+        stroke-width: .75px;
+      }
+
+      .cls-7 {
+        fill: #1d1d1b;
+        stroke-width: .88px;
+      }
+
+      .cls-8 {
+        fill: none;
+        stroke-width: 9px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-6" x="29.11" y="24.73" width="148.18" height="137.11" rx="35.53" ry="35.53"/>
+  <rect class="cls-2" x="186.42" y="24.73" width="40.47" height="110.36" rx="16.66" ry="16.66"/>
+  <rect class="cls-5" x="186.42" y="91.49" width="20.24" height="110.36" rx="10.12" ry="10.12"/>
+  <rect class="cls-3" x="101.95" y="117.25" width="52.1" height="197.78" rx="25.3" ry="25.3" transform="translate(344.14 88.14) rotate(90)"/>
+  <rect class="cls-4" x="104.82" y="124.56" width="46.35" height="145.71" rx="20.48" ry="20.48" transform="translate(325.41 69.41) rotate(90)"/>
+  <circle class="cls-7" cx="103.2" cy="93.28" r="50.69"/>
+  <path class="cls-1" d="M103.2,129.44c-19.93,0-36.15-16.22-36.15-36.15s16.22-36.15,36.15-36.15,36.15,16.22,36.15,36.15-16.22,36.15-36.15,36.15Z"/>
+  <path class="cls-8" d="M87.15,93.28c0-8.87,7.19-16.05,16.05-16.05"/>
+  <path class="cls-8" d="M119.25,93.28c0,8.87-7.19,16.05-16.05,16.05"/>
+</svg>
