@@ -2604,6 +2604,7 @@ name = "tiny4linux_assets"
 version = "1.0.0"
 dependencies = [
  "iced",
+ "once_cell",
 ]
 
 [[package]]
