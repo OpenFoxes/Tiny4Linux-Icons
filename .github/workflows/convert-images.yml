@@ -39,9 +39,9 @@ jobs:
           !contains(env.lastcommit, '🍱 Automatically converted SVGs to PNGs')
           }}
         run: |
-          mkdir -p png
+          mkdir -p generated/png
           find svg -type f -name '*.svg' | while read -r file; do
-            target="png/${file#svg/}"
+            target="generated/png/${file#svg/}"
             target_dir=$(dirname "$target")
             mkdir -p "$target_dir"
 
@@ -58,7 +58,7 @@ jobs:
           git config --global user.name 'OpenFoxes Maintenance Bot'
           git config --global user.email 'openfoxes@bono-fox.de'
           git checkout ${{ github.event.pull_request.head.ref }}
-          git add png
+          git add generated
           if git diff --cached --quiet; then
             echo "No changes detected."
           else
