@@ -11,3 +11,4 @@ include = [
 
 [dependencies]
 iced = {version = "0.13.1", default-features = false, features = ["image"]}
+once_cell = "1.21.3"
