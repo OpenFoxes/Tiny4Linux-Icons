@@ -1,0 +1,1 @@
+// Cargo generates a library containing all the assets.
