@@ -10,5 +10,5 @@ include = [
 ]
 
 [dependencies]
-iced = {version = "0.13.1", default-features = false, features = ["image", "tiny-skia", "wgpu"]}
+iced = {version = "0.14.0", default-features = false, features = ["image", "tiny-skia", "wgpu"]}
 once_cell = "1.21.3"
